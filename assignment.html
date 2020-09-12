@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Rainfall Amounts</title>
+        <link rel="stylesheet" href="rain.css">
+    </head>
+    <body onload="getYears()" id="body">
+        <div class="info-section" id="info-section">
+            <span id="month_data"></span>
+            &nbsp;
+            <span id="year_data"></span>
+            &nbsp;
+            <span id="rainfall_data"></span>
+        </div>
+
+        <div class="btn-section">
+            <span>
+                <b>Rainfall: 
+                    <span id="dropsNum">
+
+                    </span>
+                    cm
+                </b>
+            </span>
+            <select onchange="selectYearChanged(this)" id="years" style='display:none'>
+                <!-- UPDATE YEARS BOX -->
+                <option value="none">Year</option>
+            </select>
+            <select onchange="selectMonthChanged(this)" id="months" style='display:none'>
+                <!-- UPDATE MONTHS ONLY WHEN YEAR IS SELECTED -->
+                <option value="none">Month</option>
+            </select>
+
+            <div id="button-container">
+                <input type="button" value="Add" id="addButton" onclick="addNewRainfall();"/>
+                <input type="button" value="Remove" id="removeButton" onclick="removeRainfall();"/>
+                <input type="button" value="Edit" id="editButton" onclick="editRainfall();"/>
+            </div>
+            
+            <div id="newrainfallform">
+            </div>
+        </div>
+
+        <div id="sky-layer"></div>
+        <div id="drops-section"></div>
+
+        <script src="js/drop.js"></script>
+        <script src="js/webservice.js"></script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/sun.js"></script>
+    </body>
+</html>
